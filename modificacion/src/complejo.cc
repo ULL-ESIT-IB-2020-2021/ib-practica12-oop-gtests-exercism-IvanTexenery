@@ -92,8 +92,8 @@ void Complejo::Print() {
 }
 
 Complejo operator*(Complejo complex_number1, int real_number){
-  int real_part = complex_number1.GetRealPart() * real_number;
-  int complex_part = complex_number1.GetComplexPart() * real_number;
+  int real_part{complex_number1.GetRealPart() * real_number};
+  int complex_part{complex_number1.GetComplexPart() * real_number};
   Complejo complex_number2(complex_part, real_part);
   return complex_number2;
 }
