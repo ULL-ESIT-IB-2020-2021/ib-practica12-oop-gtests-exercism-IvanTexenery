@@ -32,50 +32,50 @@ Complejo::Complejo() {
 
 /**
  * Realiza una suma de números complejos.
- * @param[in] complejo1 Primer número complejo de la suma.
- * @param[in] complejo2 Segundo número complejo de la suma.
+ * @param[in] complex_number1 Primer número complejo de la suma.
+ * @param[in] complex_number2 Segundo número complejo de la suma.
  * @return Parte compleja y real del número complejo resultante.
  */
-Complejo Complejo::Sum(Complejo complejo1, Complejo complejo2) {
+Complejo Complejo::Sum(Complejo complex_number1, Complejo complex_number2) {
   int result_complex{0};
   int result_real{0};
 
-  result_complex = complejo1.GetComplexPart() + complejo2.GetComplexPart();
-  result_real = complejo1.GetRealPart() + complejo2.GetRealPart();
+  result_complex = complex_number1.GetComplexPart() + complex_number2.GetComplexPart();
+  result_real = complex_number1.GetRealPart() + complex_number2.GetRealPart();
 
   return Complejo{result_complex, result_real};
 }
 
 /**
  * Realiza una resta de números complejos.
- * @param[in] complejo1 Primer número complejo de la resta.
- * @param[in] complejo2 Segundo número complejo de la resta.
+ * @param[in] complex_number1 Primer número complejo de la resta.
+ * @param[in] complex_number2 Segundo número complejo de la resta.
  * @return Parte compleja y real del número complejo resultante.
  */
-Complejo Complejo::Subtract(Complejo complejo1, Complejo complejo2) {
+Complejo Complejo::Subtract(Complejo complex_number1, Complejo complex_number2) {
   int result_complex{0};
   int result_real{0};
 
-  result_complex = complejo1.GetComplexPart() - complejo2.GetComplexPart();
-  result_real = complejo1.GetRealPart() - complejo2.GetRealPart();
+  result_complex = complex_number1.GetComplexPart() - complex_number2.GetComplexPart();
+  result_real = complex_number1.GetRealPart() - complex_number2.GetRealPart();
 
   return Complejo{result_complex, result_real};
 }
 
 /**
  * Realiza una multiplicación de números complejos.
- * @param[in] complejo1 Primer número complejo de la multiplicación.
- * @param[in] complejo2 Segundo número complejo de la multiplicación.
+ * @param[in] complex_number1 Primer número complejo de la multiplicación.
+ * @param[in] complex_number2 Segundo número complejo de la multiplicación.
  * @return Parte compleja y real del número complejo resultante.
  */
-Complejo Complejo::Multiply(Complejo complejo1, Complejo complejo2) {
+Complejo Complejo::Multiply(Complejo complex_number1, Complejo complex_number2) {
   int result_complex{0};
   int result_real{0};
 
-  result_complex = (complejo1.GetRealPart() * complejo2.GetComplexPart()) +
-                   (complejo1.GetComplexPart() * complejo2.GetRealPart());
-  result_real = (complejo1.GetRealPart() * complejo2.GetRealPart()) -
-                (complejo1.GetComplexPart() * complejo2.GetComplexPart());
+  result_complex = (complex_number1.GetRealPart() * complex_number2.GetComplexPart()) +
+                   (complex_number1.GetComplexPart() * complex_number2.GetRealPart());
+  result_real = (complex_number1.GetRealPart() * complex_number2.GetRealPart()) -
+                (complex_number1.GetComplexPart() * complex_number2.GetComplexPart());
 
   return Complejo{result_complex, result_real};
 }
@@ -91,10 +91,11 @@ void Complejo::Print() {
   }
 }
 
-Complejo operator+(Complejo complejo1, int real_number){
-  int real_part = complejo1.GetRealPart() + real_number;
-  Complejo complejo2(complejo1.GetComplexPart(), real_part);
-  return complejo2;
+Complejo operator*(Complejo complex_number1, int real_number){
+  int real_part = complex_number1.GetRealPart() * real_number;
+  int complex_part = complex_number1.GetComplexPart() * real_number;
+  Complejo complex_number2(complex_part, real_part);
+  return complex_number2;
 }
 
 /**

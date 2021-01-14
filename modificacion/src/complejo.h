@@ -20,12 +20,12 @@ class Complejo {
   Complejo(int complex_part, int real_part);
   Complejo();
 
-  static Complejo Sum(Complejo complejo1, Complejo complejo2);
-  static Complejo Subtract(Complejo complejo1, Complejo complejo2);
-  static Complejo Multiply(Complejo complejo1, Complejo complejo2);
+  static Complejo Sum(Complejo complex_number1, Complejo complex_number2);
+  static Complejo Subtract(Complejo complex_number1, Complejo complex_number2);
+  static Complejo Multiply(Complejo complex_number1, Complejo complex_number2);
 
   void Print();
-  friend Complejo operator+(Complejo complejo1, int real_number);
+  friend Complejo operator*(Complejo complex_number1, int real_number);
   int GetComplexPart();
   int GetRealPart();
 };

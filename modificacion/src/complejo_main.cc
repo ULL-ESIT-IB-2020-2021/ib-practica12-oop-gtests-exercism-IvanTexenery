@@ -25,7 +25,7 @@ int main() {
   result.Print();
   result = Complejo::Multiply(complex_number1, complex_number2);
   result.Print();
-  result = complex_number1 + 3;
+  result = complex_number1 * 3;
   result.Print();
 
   return 0;
